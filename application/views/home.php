@@ -38,26 +38,54 @@
     <link href="<?= base_url() ?>assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
     <link href="<?= base_url() ?>assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="<?= base_url() ?>assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <!-- Template Main CSS File -->
     <link href="<?= base_url() ?>assets/css/style.css" rel="stylesheet">
     <style>
-        .floating {
+        .float {
             position: fixed;
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             bottom: 20px;
-            left: 40px;
+            left: 20px;
             background-color: #25d366;
-            color: #fff;
+            color: #FFF;
             border-radius: 50px;
             text-align: center;
             font-size: 30px;
             box-shadow: 2px 2px 3px #999;
             z-index: 100;
-            border: 0;
+        }
+
+        .my-float {
+            margin-top: 16px;
+        }
+
+        .bounce {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            25%,
+            50%,
+            75%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-20px);
+            }
+
+            60% {
+                transform: translateY(-12px);
+            }
         }
     </style>
+
 </head>
 
 <body>
@@ -90,7 +118,7 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="<?= base_url() ?>">Home</a></li>
+                    <li><a class="nav-link scrollto" href="<?= base_url() ?>">Home</a></li>
                     <li><a class="nav-link scrollto" href="#about">Tentang</a></li>
                     <li><a class="nav-link scrollto" href="#services">Layanan</a></li>
                     <li><a class="nav-link scrollto " href="#portfolio">Dokumentasi</a></li>
@@ -378,9 +406,9 @@
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
     <!-- render the button and direct it to wa.me -->
-    <button class="floating" onclick="window.open('https://api.whatsapp.com/send/?phone=<?= $phone_number ?>&text=Hi%20Gemilang%20Teknik%20AC,%20saya%20tertarik%20dengan%20layanan%20AC%20Anda.%20Bisakah%20Anda%20memberikan%20informasi%20lebih%20lanjut%20atau%20membuatkan%20penawaran%20khusus%20untuk%20saya?', '_blank')">
-        <i class="bi bi-whatsapp bi-icon"></i>
-    </button>
+    <a href="https://api.whatsapp.com/send/?phone=<?= $phone_number ?>&text=Hi%20Gemilang%20Teknik%20AC,%20saya%20tertarik%20dengan%20layanan%20AC%20Anda.%20Bisakah%20Anda%20memberikan%20informasi%20lebih%20lanjut%20atau%20membuatkan%20penawaran%20khusus%20untuk%20saya?" class="float bounce" target="_blank">
+        <i class="fa fa-whatsapp my-float"></i>
+    </a>
 
     <!-- Vendor JS Files -->
     <script src="<?= base_url() ?>assets/vendor/aos/aos.js"></script>
