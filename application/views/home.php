@@ -95,7 +95,7 @@
         <div class="container d-flex justify-content-center justify-content-md-between">
             <div class="contact-info d-flex align-items-center">
                 <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:<?= $email ?>"><?= $email ?></a></i>
-                <i class="bi bi-phone d-flex align-items-center ms-4"><span><?= $phone_number ?></span></i>
+                <i class="bi bi-phone d-flex align-items-center ms-4"><span><?= substr(chunk_split($phone_number, 4, '-'), 0, -1) ?></span></i>
             </div>
             <div class="social-links d-none d-md-flex align-items-center">
                 <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
@@ -136,7 +136,7 @@
         <div class="hero-content" data-aos="fade-up">
             <h2>Service AC <span>Jakarta</span> Terpercaya</h2>
             <div>
-                <button type="button" class="btn-projects scrollto" onclick="window.open('https://api.whatsapp.com/send/?phone=<?= $phone_number ?>&text=Hi%20Gemilang%20Teknik%20AC,%20saya%20tertarik%20dengan%20layanan%20AC%20Anda.%20Bisakah%20Anda%20memberikan%20informasi%20lebih%20lanjut%20atau%20membuatkan%20penawaran%20khusus%20untuk%20saya?', '_blank')">Hubungi Kami</button>
+                <button type="button" class="btn-projects scrollto" onclick="window.open('https://api.whatsapp.com/send/?phone=<?= "62" . substr($phone_number, 1) ?>&text=Hi%20Gemilang%20Teknik%20AC,%20saya%20tertarik%20dengan%20layanan%20AC%20Anda.%20Bisakah%20Anda%20memberikan%20informasi%20lebih%20lanjut%20atau%20membuatkan%20penawaran%20khusus%20untuk%20saya?', '_blank')">Hubungi Kami</button>
             </div>
         </div>
 
@@ -338,7 +338,7 @@
                         <p class="cta-text">Nikmati kenyamanan dalam ruangan dengan layanan AC unggulan dari Gemilang Teknik AC. Kami siap memberikan solusi terbaik untuk kebutuhan pendinginan Anda. Jangan lewatkan pengalaman AC yang optimal!</p>
                     </div>
                     <div class="col-lg-3 cta-btn-container text-center">
-                        <a class="cta-btn align-middle" href="https://api.whatsapp.com/send/?phone=<?= $phone_number ?>&text=Hi%20Gemilang%20Teknik%20AC,%20saya%20tertarik%20dengan%20layanan%20AC%20Anda.%20Bisakah%20Anda%20memberikan%20informasi%20lebih%20lanjut%20atau%20membuatkan%20penawaran%20khusus%20untuk%20saya?" target="_blank">Hubungi Kami Sekarang</a>
+                        <a class="cta-btn align-middle" href="https://api.whatsapp.com/send/?phone=<?= "62" . substr($phone_number, 1) ?>&text=Hi%20Gemilang%20Teknik%20AC,%20saya%20tertarik%20dengan%20layanan%20AC%20Anda.%20Bisakah%20Anda%20memberikan%20informasi%20lebih%20lanjut%20atau%20membuatkan%20penawaran%20khusus%20untuk%20saya?" target="_blank">Hubungi Kami Sekarang</a>
                     </div>
                 </div>
             </div>
@@ -372,7 +372,7 @@
                             <i class="bi bi-phone"></i>
                             <h3>Hubungi Kami</h3>
                             <p>Butuh bantuan segera? Jangan ragu untuk menghubungi tim layanan pelanggan kami di</p>
-                            <p><a href="https://api.whatsapp.com/send/?phone=<?= $phone_number ?>"><?= $phone_number ?></a></p>
+                            <p><a href="https://api.whatsapp.com/send/?phone=<?= "62" . substr($phone_number, 1) ?>"><?= "62" . substr($phone_number, 1) ?></a></p>
                         </div>
                     </div>
 
@@ -406,7 +406,7 @@
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
     <!-- render the button and direct it to wa.me -->
-    <a href="https://api.whatsapp.com/send/?phone=<?= $phone_number ?>&text=Hi%20Gemilang%20Teknik%20AC,%20saya%20tertarik%20dengan%20layanan%20AC%20Anda.%20Bisakah%20Anda%20memberikan%20informasi%20lebih%20lanjut%20atau%20membuatkan%20penawaran%20khusus%20untuk%20saya?" class="float bounce" target="_blank">
+    <a href="https://api.whatsapp.com/send/?phone=<?= "62" . substr($phone_number, 1) ?>&text=Hi%20Gemilang%20Teknik%20AC,%20saya%20tertarik%20dengan%20layanan%20AC%20Anda.%20Bisakah%20Anda%20memberikan%20informasi%20lebih%20lanjut%20atau%20membuatkan%20penawaran%20khusus%20untuk%20saya?" class="float bounce" target="_blank">
         <i class="fa fa-whatsapp my-float"></i>
     </a>
 
