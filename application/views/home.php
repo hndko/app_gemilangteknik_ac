@@ -372,7 +372,7 @@
                             <i class="bi bi-phone"></i>
                             <h3>Hubungi Kami</h3>
                             <p>Butuh bantuan segera? Jangan ragu untuk menghubungi tim layanan pelanggan kami di</p>
-                            <p><a href="https://api.whatsapp.com/send/?phone=<?= "62" . substr($phone_number, 1) ?>"><?= "62" . substr($phone_number, 1) ?></a></p>
+                            <p><a href="https://api.whatsapp.com/send/?phone=<?= "62" . substr($phone_number, 1) ?>"><?= substr(chunk_split($phone_number, 4, '-'), 0, -1) ?></a></p>
                         </div>
                     </div>
 
