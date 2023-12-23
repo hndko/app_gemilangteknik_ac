@@ -136,7 +136,7 @@
         <div class="hero-content" data-aos="fade-up">
             <h2>Service AC <span>Jakarta</span> Terpercaya</h2>
             <div>
-                <button type="button" class="btn-projects scrollto" onclick="window.open('https://api.whatsapp.com/send/?phone=<?= "62" . substr($phone_number, 1) ?>&text=Hi%20Gemilang%20Teknik%20AC,%20saya%20tertarik%20dengan%20layanan%20AC%20Anda.%20Bisakah%20Anda%20memberikan%20informasi%20lebih%20lanjut%20atau%20membuatkan%20penawaran%20khusus%20untuk%20saya?', '_blank')">Hubungi Kami</button>
+                <button type="button" class="btn-projects scrollto" onclick="window.open('https://api.whatsapp.com/send/?phone=<?= "62" . substr($phone_number, 1) ?>&text=<?= $message ?>', '_blank')">Hubungi Kami</button>
             </div>
         </div>
 
@@ -338,7 +338,7 @@
                         <p class="cta-text">Nikmati kenyamanan dalam ruangan dengan layanan AC unggulan dari Gemilang Teknik AC. Kami siap memberikan solusi terbaik untuk kebutuhan pendinginan Anda. Jangan lewatkan pengalaman AC yang optimal!</p>
                     </div>
                     <div class="col-lg-3 cta-btn-container text-center">
-                        <a class="cta-btn align-middle" href="https://api.whatsapp.com/send/?phone=<?= "62" . substr($phone_number, 1) ?>&text=Hi%20Gemilang%20Teknik%20AC,%20saya%20tertarik%20dengan%20layanan%20AC%20Anda.%20Bisakah%20Anda%20memberikan%20informasi%20lebih%20lanjut%20atau%20membuatkan%20penawaran%20khusus%20untuk%20saya?" target="_blank">Hubungi Kami Sekarang</a>
+                        <a class="cta-btn align-middle" href="https://api.whatsapp.com/send/?phone=<?= "62" . substr($phone_number, 1) ?>&text=<?= $message ?>" target="_blank">Hubungi Kami Sekarang</a>
                     </div>
                 </div>
             </div>
@@ -406,7 +406,7 @@
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
     <!-- render the button and direct it to wa.me -->
-    <a href="https://api.whatsapp.com/send/?phone=<?= "62" . substr($phone_number, 1) ?>&text=Hi%20Gemilang%20Teknik%20AC,%20saya%20tertarik%20dengan%20layanan%20AC%20Anda.%20Bisakah%20Anda%20memberikan%20informasi%20lebih%20lanjut%20atau%20membuatkan%20penawaran%20khusus%20untuk%20saya?" class="float bounce" target="_blank">
+    <a href="https://api.whatsapp.com/send/?phone=<?= "62" . substr($phone_number, 1) ?>&text=<?= $message ?>" class="float bounce" target="_blank">
         <i class="fa fa-whatsapp my-float"></i>
     </a>
 
