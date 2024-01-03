@@ -401,7 +401,7 @@
             </div>
 
             <div class="container mb-4">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.80803040563!2d106.8328989758688!3d-6.288945161557284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f20e0777236f%3A0x79fbc257d3aa768f!2sJl.%20Jati%20Raya%20No.3%2C%20RT.6%2FRW.6%2C%20Jati%20Padang%2C%20Ps.%20Minggu%2C%20Kota%20Jakarta%20Selatan%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2012540!5e0!3m2!1sen!2sid!4v1703239280457!5m2!1sen!2sid" width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.7957581238866!2d106.83311247475113!3d-6.29055379369844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3d0cc0c601b%3A0xf1b3b9a47e9aca26!2sGemilang%20AC!5e0!3m2!1sid!2sid!4v1704294791575!5m2!1sid!2sid" width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
         </section><!-- End Contact Section -->
 

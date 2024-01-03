@@ -9,7 +9,7 @@ class HomeController extends CI_Controller
 
         $this->data = [
             'phone_number' => '082112423492',
-            'email' => 'fajarseptio1998@gmail.com',
+            'email' => 'admin@gemilangac.com',
             'message' => 'Hallo Gemilang AC, saya memiliki keluhan pada AC saya, mohon bantuannya...'
         ];
     }
