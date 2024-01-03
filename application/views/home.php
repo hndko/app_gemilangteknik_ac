@@ -86,6 +86,18 @@
         }
     </style>
 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JK1W5JGF6E"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-JK1W5JGF6E');
+    </script>
+
 </head>
 
 <body>
