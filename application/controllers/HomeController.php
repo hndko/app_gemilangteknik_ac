@@ -18,6 +18,33 @@ class HomeController extends CI_Controller
     {
         $this->data['title'] = 'Gemilang Teknik AC | Service dan Perbaikan AC Terbaik di Jakarta';
 
+        $this->load->view('layout/head', $this->data);
+        $this->load->view('layout/navbar', $this->data);
+        $this->load->view('layout/hero', $this->data);
         $this->load->view('home', $this->data);
+        $this->load->view('layout/footer', $this->data);
+        $this->load->view('layout/javascript', $this->data);
+    }
+
+    public function artikel()
+    {
+        $this->data['title'] = 'Gemilang Teknik AC | Service dan Perbaikan AC Terbaik di Jakarta';
+
+        $this->load->view('layout/head', $this->data);
+        $this->load->view('layout/navbar', $this->data);
+        $this->load->view('artikel', $this->data);
+        $this->load->view('layout/footer', $this->data);
+        $this->load->view('layout/javascript', $this->data);
+    }
+
+    public function artikel_details()
+    {
+        $this->data['title'] = 'Gemilang Teknik AC | Service dan Perbaikan AC Terbaik di Jakarta';
+
+        $this->load->view('layout/head', $this->data);
+        $this->load->view('layout/navbar', $this->data);
+        $this->load->view('artikel_details', $this->data);
+        $this->load->view('layout/footer', $this->data);
+        $this->load->view('layout/javascript', $this->data);
     }
 }
