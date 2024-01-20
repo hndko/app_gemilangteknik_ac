@@ -19,7 +19,7 @@
     <div class="container d-flex justify-content-between">
 
         <div id="logo">
-            <h1><a href="index.html">Gemilang Teknik</span></a></h1>
+            <h1><a href="<?= base_url() ?>">Gemilang Teknik</span></a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html"><img src="<?= base_url() ?>assets/img/logo.webp" alt=""></a>-->
         </div>

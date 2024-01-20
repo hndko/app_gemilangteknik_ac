@@ -23,48 +23,15 @@
                 <h2>Layanan Unggulan Kami:</h2>
             </div>
             <div class="row gy-4">
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="box">
-                        <div class="icon"><i class="bi bi-tools"></i></div>
-                        <h4 class="title"><a href="">Pemasangan Unit AC</a></h4>
-                        <p class="description">Dukungan profesional untuk memasang unit AC baru dengan presisi dan efisiensi.</p>
+                <?php foreach ($layanan as $res) : ?>
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="box">
+                            <div class="icon"><i class="bi bi-tools"></i></div>
+                            <h4 class="title"><a href=""><?= $res->judul ?></a></h4>
+                            <p class="description"><?= $res->deskripsi ?></p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="box">
-                        <div class="icon"><i class="bi bi-tools"></i></div>
-                        <h4 class="title"><a href="">Maintenance AC</a></h4>
-                        <p class="description">Perawatan rutin yang teliti untuk memastikan AC Anda berfungsi dengan optimal.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="box">
-                        <div class="icon"><i class="bi bi-tools"></i></div>
-                        <h4 class="title"><a href="">Service Berkala</a></h4>
-                        <p class="description">Layanan berkala untuk mencegah masalah dan menjaga performa AC dalam kondisi terbaik.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="box">
-                        <div class="icon"><i class="bi bi-tools"></i></div>
-                        <h4 class="title"><a href="">Cuci AC</a></h4>
-                        <p class="description">Pembersihan menyeluruh untuk menjaga kebersihan dan kinerja maksimal AC Anda.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="box">
-                        <div class="icon"><i class="bi bi-tools"></i></div>
-                        <h4 class="title"><a href="">Penambahan Freon</a></h4>
-                        <p class="description">Solusi efisien untuk menjaga kesejukan dengan menambahkan freon sesuai kebutuhan.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="box">
-                        <div class="icon"><i class="bi bi-tools"></i></div>
-                        <h4 class="title"><a href="">Instalasi AC</a></h4>
-                        <p class="description">Profesionalisme dalam setiap langkah untuk memastikan instalasi AC yang tepat dan handal.</p>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </section>
@@ -122,54 +89,16 @@
             </div>
 
             <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <img src="<?= base_url() ?>assets/img/documentation/documentation-1.webp" class="img-fluid" alt="">
-                    <a href="<?= base_url() ?>assets/img/documentation/documentation-1.webp" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link">
-                        <div class="portfolio-info">
-                            <h4 class="pt-3">Penanganan Masalah AC Tidak Dingin</h4>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <img src="<?= base_url() ?>assets/img/documentation/documentation-2.webp" class="img-fluid" alt="">
-                    <a href="<?= base_url() ?>assets/img/documentation/documentation-2.webp" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link">
-                        <div class="portfolio-info">
-                            <h4 class="pt-3">Layanan Rutin Perawatan AC</h4>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <img src="<?= base_url() ?>assets/img/documentation/documentation-3.webp" class="img-fluid" alt="">
-                    <a href="<?= base_url() ?>assets/img/documentation/documentation-3.webp" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link">
-                        <div class="portfolio-info">
-                            <h4 class="pt-3">Penambahan Freon Profesional</h4>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <img src="<?= base_url() ?>assets/img/documentation/documentation-4.webp" class="img-fluid" alt="">
-                    <a href="<?= base_url() ?>assets/img/documentation/documentation-4.webp" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link">
-                        <div class="portfolio-info">
-                            <h4 class="pt-3">Penanganan Perbaikan AC Netes Air</h4>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <img src="<?= base_url() ?>assets/img/documentation/documentation-5.webp" class="img-fluid" alt="">
-                    <a href="<?= base_url() ?>assets/img/documentation/documentation-5.webp" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link">
-                        <div class="portfolio-info">
-                            <h4 class="pt-3">Pengecekan dan Pemeliharaan Freon</h4>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                    <img src="<?= base_url() ?>assets/img/documentation/documentation-6.webp" class="img-fluid" alt="">
-                    <a href="<?= base_url() ?>assets/img/documentation/documentation-6.webp" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link">
-                        <div class="portfolio-info">
-                            <h4 class="pt-3">Penanganan Perbaikan Freon Bocor</h4>
-                        </div>
-                    </a>
-                </div>
+                <?php foreach ($dokumentasi as $res) : ?>
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <img src="<?= base_url() ?>assets/img/dokumentasi/<?= $res->sampul ?>" class="img-fluid" alt="">
+                        <a href="<?= base_url() ?>assets/img/dokumentasi/<?= $res->sampul ?>" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link">
+                            <div class="portfolio-info">
+                                <h4 class="pt-3"><?= $res->deskripsi ?></h4>
+                            </div>
+                        </a>
+                    </div>
+                <?php endforeach; ?>
             </div>
 
         </div>

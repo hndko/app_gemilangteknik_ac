@@ -7,17 +7,19 @@ class DashboardController extends CI_Controller
     {
         parent::__construct();
 
-        $this->data = [
-            'phone_number' => '082112423492',
-            'email' => 'admin@gemilangac.com',
-            'message' => 'Hallo Gemilang AC, saya memiliki keluhan pada AC saya, mohon bantuannya...'
-        ];
+        $this->data = [];
     }
 
     public function index()
     {
-        $this->data['title'] = 'Gemilang Teknik AC | Service dan Perbaikan AC Terbaik di Jakarta';
+        $this->data['title'] = 'Dashboard | Gemilang Teknik AC';
+        $this->data['pages'] = 'Dashboard';
 
+        $this->load->view('panel/layout/head', $this->data);
+        $this->load->view('panel/layout/navbar', $this->data);
+        $this->load->view('panel/layout/sidebar', $this->data);
         $this->load->view('panel/index', $this->data);
+        $this->load->view('panel/layout/footer', $this->data);
+        $this->load->view('panel/layout/javascript', $this->data);
     }
 }

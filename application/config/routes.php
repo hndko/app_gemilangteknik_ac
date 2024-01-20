@@ -57,3 +57,21 @@ $route['artikel'] = 'HomeController/artikel';
 $route['artikel-details'] = 'HomeController/artikel_details';
 
 $route['panel'] = 'DashboardController';
+
+$route['layanan'] = 'LayananController/index';
+$route['layanan/create'] = 'LayananController/create';
+$route['layanan/edit/(:any)'] = 'LayananController/edit/$1';
+$route['layanan/delete/(:any)'] = 'LayananController/delete/$1';
+$route['layanan/is_active/(:any)'] = 'LayananController/is_active/$1';
+
+$route['dokumentasi'] = 'DokumentasiController/index';
+$route['dokumentasi/create'] = 'DokumentasiController/create';
+$route['dokumentasi/edit/(:any)'] = 'DokumentasiController/edit/$1';
+$route['dokumentasi/delete/(:any)'] = 'DokumentasiController/delete/$1';
+$route['dokumentasi/is_active/(:any)'] = 'DokumentasiController/is_active/$1';
+
+$route['pengguna'] = 'PenggunaController/index';
+$route['pengguna/create'] = 'PenggunaController/create';
+$route['pengguna/edit/(:any)'] = 'PenggunaController/edit/$1';
+$route['pengguna/delete/(:any)'] = 'PenggunaController/delete/$1';
+$route['pengguna/is_active/(:any)'] = 'PenggunaController/is_active/$1';

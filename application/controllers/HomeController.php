@@ -6,6 +6,8 @@ class HomeController extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->load->model('LayananModel');
+        $this->load->model('DokumentasiModel');
 
         $this->data = [
             'phone_number' => '082112423492',
@@ -17,6 +19,8 @@ class HomeController extends CI_Controller
     public function index()
     {
         $this->data['title'] = 'Gemilang Teknik AC | Service dan Perbaikan AC Terbaik di Jakarta';
+        $this->data['layanan'] = $this->LayananModel->showHome();
+        $this->data['dokumentasi'] = $this->DokumentasiModel->showHome();
 
         $this->load->view('layout/head', $this->data);
         $this->load->view('layout/navbar', $this->data);
