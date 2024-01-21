@@ -23,7 +23,7 @@
                         <div class="card-header">
                             <span class="h5">Daftar <?= $pages ?></span>
                             <div class="card-tools">
-                                <button type="button" class="btn btn-primary btn-sm" onclick="window.location.href='<?= base_url() ?>dokumentasi/create'">
+                                <button type="button" class="btn btn-primary btn-sm" onclick="window.location.href='<?= base_url() ?>blog/create'">
                                     <i class="fas fa-plus-square"></i> Tambah Data
                                 </button>
                             </div>
@@ -50,7 +50,7 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Deskripsi</th>
-                                        <th>Status Dokumentasi</th>
+                                        <th>Status Artikel</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -62,16 +62,16 @@
                                             <td><?= $res->deskripsi ?></td>
                                             <td>
                                                 <?php if ($res->is_active === '1') : ?>
-                                                    <span class="badge badge-success" style="cursor: pointer;" data-toggle="modal" data-target="#modal-status<?= $res->dokumentasi_id ?>">Dokumentasi Aktif</span>
+                                                    <span class="badge badge-success" style="cursor: pointer;" data-toggle="modal" data-target="#modal-status<?= $res->blog_id ?>">Artikel Aktif</span>
                                                 <?php else : ?>
-                                                    <span class="badge badge-danger" style="cursor: pointer;" data-toggle="modal" data-target="#modal-status<?= $res->dokumentasi_id ?>">Dokumentasi Dinonaktifkan</span>
+                                                    <span class="badge badge-danger" style="cursor: pointer;" data-toggle="modal" data-target="#modal-status<?= $res->blog_id ?>">Artikel Dinonaktifkan</span>
                                                 <?php endif; ?>
                                             </td>
                                             <td>
-                                                <button type="button" class="btn btn-info btn-sm" onclick="editData('<?= base_url('dokumentasi') ?>', '<?= $res->dokumentasi_id ?>')">
+                                                <button type="button" class="btn btn-info btn-sm" onclick="editData('<?= base_url('blog') ?>', '<?= $res->blog_id ?>')">
                                                     <i class="fas fa-edit"></i> Ubah
                                                 </button>
-                                                <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete('<?= base_url('dokumentasi') ?>', '<?= $res->dokumentasi_id ?>')">
+                                                <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete('<?= base_url('blog') ?>', '<?= $res->blog_id ?>')">
                                                     <i class="fas fa-trash-alt"></i> Hapus
                                                 </button>
                                             </td>
@@ -88,21 +88,21 @@
 </div>
 
 <?php foreach ($result as $res) : ?>
-    <div class="modal fade" id="modal-status<?= $res->dokumentasi_id ?>">
+    <div class="modal fade" id="modal-status<?= $res->blog_id ?>">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Ubah Status Dokumentasi</h4>
+                    <h4 class="modal-title">Ubah Status blog</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="<?= base_url() ?>dokumentasi/is_active/<?= $res->dokumentasi_id ?>" method="post">
+                <form action="<?= base_url() ?>blog/is_active/<?= $res->blog_id ?>" method="post">
                     <div class="modal-body">
                         <select name="is_active" id="is_active" class="form-control" required>
                             <option value="">--- Choose One ---</option>
-                            <option value="1" <?= $res->is_active === '1' ? 'selected' : '' ?>>Dokumentasi Aktif</option>
-                            <option value="0" <?= $res->is_active === '0' ? 'selected' : '' ?>>Dokumentasi Dinonaktifkan</option>
+                            <option value="1" <?= $res->is_active === '1' ? 'selected' : '' ?>>Artikel Aktif</option>
+                            <option value="0" <?= $res->is_active === '0' ? 'selected' : '' ?>>Artikel Dinonaktifkan</option>
                         </select>
                     </div>
                     <div class="modal-footer justify-content-between">

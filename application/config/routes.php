@@ -58,6 +58,12 @@ $route['artikel-details'] = 'HomeController/artikel_details';
 
 $route['panel'] = 'DashboardController';
 
+$route['blog'] = 'BlogController/index';
+$route['blog/create'] = 'BlogController/create';
+$route['blog/edit/(:any)'] = 'BlogController/edit/$1';
+$route['blog/delete/(:any)'] = 'BlogController/delete/$1';
+$route['blog/is_active/(:any)'] = 'BlogController/is_active/$1';
+
 $route['layanan'] = 'LayananController/index';
 $route['layanan/create'] = 'LayananController/create';
 $route['layanan/edit/(:any)'] = 'LayananController/edit/$1';

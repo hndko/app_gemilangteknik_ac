@@ -14,8 +14,8 @@ class BlogController extends CI_Controller
 
     public function index()
     {
-        $this->data['title'] = 'Blog | Gemilang Teknik AC';
-        $this->data['pages'] = 'Blog';
+        $this->data['title'] = 'Artikel | Gemilang Teknik AC';
+        $this->data['pages'] = 'Artikel';
         $this->data['result'] = $this->BlogModel->ambilData();
 
         $this->load->view('panel/layout/head', $this->data);
@@ -31,8 +31,8 @@ class BlogController extends CI_Controller
         $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required');
 
         if ($this->form_validation->run() == false) {
-            $this->data['title'] = 'Blog | Gemilang Teknik AC';
-            $this->data['pages'] = 'Blog';
+            $this->data['title'] = 'Artikel | Gemilang Teknik AC';
+            $this->data['pages'] = 'Artikel';
 
             $this->load->view('panel/layout/head', $this->data);
             $this->load->view('panel/layout/navbar', $this->data);
@@ -73,8 +73,8 @@ class BlogController extends CI_Controller
         $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required');
 
         if ($this->form_validation->run() == false) {
-            $this->data['title'] = 'Blog | Gemilang Teknik AC';
-            $this->data['pages'] = 'Blog';
+            $this->data['title'] = 'Artikel | Gemilang Teknik AC';
+            $this->data['pages'] = 'Artikel';
             $this->data['res'] = $this->BlogModel->ambilData($id);
 
             $this->load->view('panel/layout/head', $this->data);

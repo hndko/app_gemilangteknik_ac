@@ -23,7 +23,7 @@
                         <div class="card-header">
                             <span class="h5">Ubah <?= $pages ?></span>
                             <div class="card-tools">
-                                <button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='<?= base_url() ?>dokumentasi'">
+                                <button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='<?= base_url() ?>blog'">
                                     <i class="fas fa-chevron-circle-left"></i> Kembali
                                 </button>
                             </div>
@@ -44,7 +44,7 @@
                                             <input type="file" class="custom-file-input" name="sampul" id="sampul" accept="image/*">
                                             <label class="custom-file-label" for="sampul">Choose image file</label>
                                         </div>
-                                        <img src="<?= base_url() ?>assets/img/dokumentasi/<?= $res->sampul ?>" alt="" class="img-thumbnail">
+                                        <img src="<?= base_url() ?>assets/img/blog/<?= $res->sampul ?>" alt="" class="img-thumbnail">
                                     </div>
                                 </div>
                             </div>

@@ -23,7 +23,7 @@
                         <div class="card-header">
                             <span class="h5">Tambah <?= $pages ?></span>
                             <div class="card-tools">
-                                <button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='<?= base_url() ?>dokumentasi'">
+                                <button type="button" class="btn btn-secondary btn-sm" onclick="window.location.href='<?= base_url() ?>blog'">
                                     <i class="fas fa-chevron-circle-left"></i> Kembali
                                 </button>
                             </div>
