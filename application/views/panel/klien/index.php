@@ -23,7 +23,7 @@
                         <div class="card-header">
                             <span class="h5">Daftar <?= $pages ?></span>
                             <div class="card-tools">
-                                <button type="button" class="btn btn-primary btn-sm" onclick="window.location.href='<?= base_url() ?>dokumentasi/create'">
+                                <button type="button" class="btn btn-primary btn-sm" onclick="window.location.href='<?= base_url() ?>klien/create'">
                                     <i class="fas fa-plus-square"></i> Tambah Data
                                 </button>
                             </div>
@@ -49,8 +49,8 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Deskripsi</th>
-                                        <th>Status Dokumentasi</th>
+                                        <th>Judul</th>
+                                        <th>Status Klien</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -59,19 +59,19 @@
                                     <?php foreach ($result as $res) : ?>
                                         <tr>
                                             <td><?= $no++ ?></td>
-                                            <td><?= $res->deskripsi ?></td>
+                                            <td><?= $res->judul ?></td>
                                             <td>
                                                 <?php if ($res->is_active === '1') : ?>
-                                                    <span class="badge badge-success" style="cursor: pointer;" data-toggle="modal" data-target="#modal-status<?= $res->dokumentasi_id ?>">Dokumentasi Aktif</span>
+                                                    <span class="badge badge-success" style="cursor: pointer;" data-toggle="modal" data-target="#modal-status<?= $res->klien_id ?>">Klien Aktif</span>
                                                 <?php else : ?>
-                                                    <span class="badge badge-danger" style="cursor: pointer;" data-toggle="modal" data-target="#modal-status<?= $res->dokumentasi_id ?>">Dokumentasi Dinonaktifkan</span>
+                                                    <span class="badge badge-danger" style="cursor: pointer;" data-toggle="modal" data-target="#modal-status<?= $res->klien_id ?>">Klien Dinonaktifkan</span>
                                                 <?php endif; ?>
                                             </td>
                                             <td>
-                                                <button type="button" class="btn btn-info btn-sm" onclick="editData('<?= base_url('dokumentasi') ?>', '<?= $res->dokumentasi_id ?>')">
+                                                <button type="button" class="btn btn-info btn-sm" onclick="editData('<?= base_url('klien') ?>', '<?= $res->klien_id ?>')">
                                                     <i class="fas fa-edit"></i> Ubah
                                                 </button>
-                                                <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete('<?= base_url('dokumentasi') ?>', '<?= $res->dokumentasi_id ?>')">
+                                                <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete('<?= base_url('klien') ?>', '<?= $res->klien_id ?>')">
                                                     <i class="fas fa-trash-alt"></i> Hapus
                                                 </button>
                                             </td>
@@ -88,21 +88,21 @@
 </div>
 
 <?php foreach ($result as $res) : ?>
-    <div class="modal fade" id="modal-status<?= $res->dokumentasi_id ?>">
+    <div class="modal fade" id="modal-status<?= $res->klien_id ?>">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Ubah Status Dokumentasi</h4>
+                    <h4 class="modal-title">Ubah Status klien</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="<?= base_url() ?>dokumentasi/is_active/<?= $res->dokumentasi_id ?>" method="post">
+                <form action="<?= base_url() ?>klien/is_active/<?= $res->klien_id ?>" method="post">
                     <div class="modal-body">
                         <select name="is_active" id="is_active" class="form-control" required>
                             <option value="">--- Choose One ---</option>
-                            <option value="1" <?= $res->is_active === '1' ? 'selected' : '' ?>>Dokumentasi Aktif</option>
-                            <option value="0" <?= $res->is_active === '0' ? 'selected' : '' ?>>Dokumentasi Dinonaktifkan</option>
+                            <option value="1" <?= $res->is_active === '1' ? 'selected' : '' ?>>Klien Aktif</option>
+                            <option value="0" <?= $res->is_active === '0' ? 'selected' : '' ?>>Klien Dinonaktifkan</option>
                         </select>
                     </div>
                     <div class="modal-footer justify-content-between">

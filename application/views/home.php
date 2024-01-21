@@ -44,25 +44,9 @@
 
             <div class="clients-slider swiper" data-aos="fade-up" data-aos-delay="100">
                 <div class="swiper-wrapper align-items-center">
-
-                    <?php
-                    $directory = "assets/img/clients/"; // Ganti dengan path direktori yang sesuai
-
-                    // Mendapatkan daftar file dalam direktori
-                    $files = scandir($directory);
-
-                    // Loop untuk menampilkan gambar-gambar dari direktori
-                    foreach ($files as $file) {
-                        // Hanya menampilkan file dengan ekstensi tertentu (misalnya jpg, png)
-                        $allowed_extensions = ['jpg', 'jpeg', 'png', 'gif'];
-                        $file_info = pathinfo($file);
-
-                        if (in_array(strtolower($file_info['extension']), $allowed_extensions)) {
-                            echo '<div class="swiper-slide"><img src="' . base_url($directory . $file) . '" class="img-fluid" alt=""></div>';
-                        }
-                    }
-                    ?>
-
+                    <?php foreach ($klien as $res) : ?>
+                        <div class="swiper-slide"><img src="<?= base_url() ?>assets/img/klien/<?= $res->sampul ?>" class="img-fluid" alt=""></div>
+                    <?php endforeach; ?>
                 </div>
                 <div class="swiper-pagination"></div>
             </div>

@@ -24,7 +24,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= base_url() ?>artikel" class="nav-link <?= $pages === 'Artikel' ? 'active' : '' ?>">
+                    <a href="<?= base_url() ?>blog" class="nav-link <?= $pages === 'Blog' ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-newspaper"></i>
                         <p>Artikel </p>
                     </a>

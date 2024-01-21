@@ -64,6 +64,12 @@ $route['layanan/edit/(:any)'] = 'LayananController/edit/$1';
 $route['layanan/delete/(:any)'] = 'LayananController/delete/$1';
 $route['layanan/is_active/(:any)'] = 'LayananController/is_active/$1';
 
+$route['klien'] = 'KlienController/index';
+$route['klien/create'] = 'KlienController/create';
+$route['klien/edit/(:any)'] = 'KlienController/edit/$1';
+$route['klien/delete/(:any)'] = 'KlienController/delete/$1';
+$route['klien/is_active/(:any)'] = 'KlienController/is_active/$1';
+
 $route['dokumentasi'] = 'DokumentasiController/index';
 $route['dokumentasi/create'] = 'DokumentasiController/create';
 $route['dokumentasi/edit/(:any)'] = 'DokumentasiController/edit/$1';
