@@ -6,10 +6,14 @@ class BlogController extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        if ($this->session->userdata('logged') != TRUE) {
+            redirect('auth');
+        }
 
         $this->load->model('BlogModel');
+        $this->load->model('PenggunaModel');
 
-        $this->data = [];
+        $this->data = ['account' => $this->PenggunaModel->ambilData($this->session->userdata['user_id'])];
     }
 
     public function index()
@@ -62,7 +66,7 @@ class BlogController extends CI_Controller
                 $file_size = $upload_data['file_size'];
 
                 // Simpan data gambar ke dalam database
-                $this->BlogModel->tambahData($file_name);
+                $this->BlogModel->tambahData($file_name, $this->session->userdata['user_id']);
                 $this->session->set_flashdata('success', true);
                 $this->session->set_flashdata('message', '<strong>Berhasil!</strong> Data anda telah tersimpan.');
                 redirect('blog');

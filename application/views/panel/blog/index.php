@@ -49,6 +49,7 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
+                                        <th>Pengguna</th>
                                         <th>Judul</th>
                                         <th>Deskripsi</th>
                                         <th>Status Artikel</th>
@@ -60,6 +61,7 @@
                                     <?php foreach ($result as $res) : ?>
                                         <tr>
                                             <td><?= $no++ ?></td>
+                                            <td><?= $res->nama_lengkap ?></td>
                                             <td><?= $res->judul ?></td>
                                             <td><?= substr(strip_tags(htmlspecialchars_decode($res->deskripsi)), 0, 200) ?>...</td>
                                             <td>
@@ -70,12 +72,18 @@
                                                 <?php endif; ?>
                                             </td>
                                             <td>
-                                                <button type="button" class="btn btn-info btn-sm" onclick="editData('<?= base_url('blog') ?>', '<?= $res->artikel_id ?>')">
-                                                    <i class="fas fa-edit"></i> Ubah
-                                                </button>
-                                                <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete('<?= base_url('blog') ?>', '<?= $res->artikel_id ?>')">
-                                                    <i class="fas fa-trash-alt"></i> Hapus
-                                                </button>
+                                                <?php if ($res->user_id === $account->user_id) : ?>
+                                                    <button type="button" class="btn btn-info btn-sm" onclick="editData('<?= base_url('blog') ?>', '<?= $res->artikel_id ?>')">
+                                                        <i class="fas fa-edit"></i> Ubah
+                                                    </button>
+                                                    <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete('<?= base_url('blog') ?>', '<?= $res->artikel_id ?>')">
+                                                        <i class="fas fa-trash-alt"></i> Hapus
+                                                    </button>
+                                                <?php else : ?>
+                                                    <button type="button" class="btn btn-secondary btn-sm">
+                                                        <i class="fas fa-lock"></i> Access Denied
+                                                    </button>
+                                                <?php endif; ?>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>

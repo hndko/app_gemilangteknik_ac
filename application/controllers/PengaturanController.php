@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class DashboardController extends CI_Controller
+class PengaturanController extends CI_Controller
 {
     public function __construct()
     {
@@ -17,13 +17,13 @@ class DashboardController extends CI_Controller
 
     public function index()
     {
-        $this->data['title'] = 'Dashboard | Gemilang Teknik AC';
-        $this->data['pages'] = 'Dashboard';
+        $this->data['title'] = 'Pengaturan | Gemilang Teknik AC';
+        $this->data['pages'] = 'Pengaturan';
 
         $this->load->view('panel/layout/head', $this->data);
         $this->load->view('panel/layout/navbar', $this->data);
         $this->load->view('panel/layout/sidebar', $this->data);
-        $this->load->view('panel/index', $this->data);
+        $this->load->view('panel/pengaturan/index', $this->data);
         $this->load->view('panel/layout/footer', $this->data);
         $this->load->view('panel/layout/javascript', $this->data);
     }

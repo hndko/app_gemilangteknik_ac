@@ -8,10 +8,10 @@
     <div class="sidebar">
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="<?= base_url() ?>assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="Gemilang Teknik AC">
+                <img src="<?= base_url() ?>assets/img/pengguna/<?= $account->sampul ?>" class="img-circle elevation-2" alt="Gemilang Teknik AC">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Administrator</a>
+                <a href="#" class="d-block"><?= $account->nama_lengkap ?></a>
             </div>
         </div>
 
@@ -23,44 +23,78 @@
                         <p>Beranda </p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="<?= base_url() ?>blog" class="nav-link <?= $pages === 'Blog' ? 'active' : '' ?>">
-                        <i class="nav-icon fas fa-newspaper"></i>
-                        <p>Artikel </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="<?= base_url() ?>layanan" class="nav-link <?= $pages === 'Layanan' ? 'active' : '' ?>">
-                        <i class="nav-icon fas fa-list-alt"></i>
-                        <p>Layanan </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="<?= base_url() ?>klien" class="nav-link <?= $pages === 'Klien' ? 'active' : '' ?>">
-                        <i class="nav-icon fas fa-people-arrows"></i>
-                        <p>Klien </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="<?= base_url() ?>dokumentasi" class="nav-link <?= $pages === 'Dokumentasi' ? 'active' : '' ?>">
-                        <i class="nav-icon fas fa-images"></i>
-                        <p>Dokumentasi </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="<?= base_url() ?>pengguna" class="nav-link <?= $pages === 'Pengguna' ? 'active' : '' ?>">
-                        <i class="nav-icon fas fa-users"></i>
-                        <p>Pengguna </p>
-                    </a>
-                </li>
-                <li class="nav-item">
+                <?php if ($account->role === 'Superadmin') : ?>
+                    <li class="nav-item">
+                        <a href="<?= base_url() ?>blog" class="nav-link <?= $pages === 'Artikel' ? 'active' : '' ?>">
+                            <i class="nav-icon fas fa-newspaper"></i>
+                            <p>Artikel </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url() ?>layanan" class="nav-link <?= $pages === 'Layanan' ? 'active' : '' ?>">
+                            <i class="nav-icon fas fa-list-alt"></i>
+                            <p>Layanan </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url() ?>klien" class="nav-link <?= $pages === 'Klien' ? 'active' : '' ?>">
+                            <i class="nav-icon fas fa-people-arrows"></i>
+                            <p>Klien </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url() ?>dokumentasi" class="nav-link <?= $pages === 'Dokumentasi' ? 'active' : '' ?>">
+                            <i class="nav-icon fas fa-images"></i>
+                            <p>Dokumentasi </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url() ?>pengguna" class="nav-link <?= $pages === 'Pengguna' ? 'active' : '' ?>">
+                            <i class="nav-icon fas fa-users"></i>
+                            <p>Pengguna </p>
+                        </a>
+                    </li>
+                <?php elseif ($account->role === 'Admin') : ?>
+                    <li class="nav-item">
+                        <a href="<?= base_url() ?>blog" class="nav-link <?= $pages === 'Blog' ? 'active' : '' ?>">
+                            <i class="nav-icon fas fa-newspaper"></i>
+                            <p>Artikel </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url() ?>layanan" class="nav-link <?= $pages === 'Layanan' ? 'active' : '' ?>">
+                            <i class="nav-icon fas fa-list-alt"></i>
+                            <p>Layanan </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url() ?>klien" class="nav-link <?= $pages === 'Klien' ? 'active' : '' ?>">
+                            <i class="nav-icon fas fa-people-arrows"></i>
+                            <p>Klien </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url() ?>dokumentasi" class="nav-link <?= $pages === 'Dokumentasi' ? 'active' : '' ?>">
+                            <i class="nav-icon fas fa-images"></i>
+                            <p>Dokumentasi </p>
+                        </a>
+                    </li>
+                <?php elseif ($account->role === 'Admin Content') : ?>
+                    <li class="nav-item">
+                        <a href="<?= base_url() ?>blog" class="nav-link <?= $pages === 'Blog' ? 'active' : '' ?>">
+                            <i class="nav-icon fas fa-newspaper"></i>
+                            <p>Artikel </p>
+                        </a>
+                    </li>
+                <?php endif; ?>
+                <!-- <li class="nav-item">
                     <a href="<?= base_url() ?>pengaturan" class="nav-link <?= $pages === 'Pengaturan' ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-cogs"></i>
                         <p>Pengaturan </p>
                     </a>
-                </li>
+                </li> -->
                 <li class="nav-item">
-                    <a href="<?= base_url() ?>pengaturan" class="nav-link">
+                    <a href="<?= base_url() ?>logout" class="nav-link">
                         <i class="nav-icon fas fa-sign-out-alt"></i>
                         <p>Keluar </p>
                     </a>

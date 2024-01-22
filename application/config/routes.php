@@ -60,6 +60,7 @@ $route['artikel-details/(:any)'] = 'HomeController/artikel_details/$1';
 $route['search'] = 'HomeController/search';
 
 $route['panel'] = 'DashboardController';
+$route['pengaturan'] = 'PengaturanController';
 
 $route['blog'] = 'BlogController/index';
 $route['blog/create'] = 'BlogController/create';
@@ -90,3 +91,7 @@ $route['pengguna/create'] = 'PenggunaController/create';
 $route['pengguna/edit/(:any)'] = 'PenggunaController/edit/$1';
 $route['pengguna/delete/(:any)'] = 'PenggunaController/delete/$1';
 $route['pengguna/is_active/(:any)'] = 'PenggunaController/is_active/$1';
+
+/** Authentication */
+$route['auth'] = 'AuthController/index';
+$route['logout'] = 'AuthController/logout';

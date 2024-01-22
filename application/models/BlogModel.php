@@ -88,12 +88,13 @@ class BlogModel extends CI_Model
         }
     }
 
-    public function tambahData($file_name)
+    public function tambahData($file_name, $user_id)
     {
         date_default_timezone_set('Asia/Jakarta'); # add your city to set local time zone
         $now = date('Y-m-d H:i:s');
 
         $data = [
+            'user_id' => $user_id,
             'slug' => htmlspecialchars($this->input->post('slug')),
             'judul' => htmlspecialchars($this->input->post('judul')),
             'deskripsi' => htmlspecialchars($this->input->post('deskripsi')),
