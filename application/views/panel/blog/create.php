@@ -31,9 +31,21 @@
                         <form action="" method="post" class="form-horizontal" enctype="multipart/form-data">
                             <div class="card-body">
                                 <div class="form-group row">
+                                    <label for="slug" class="col-sm-2 col-form-label">Slug</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control bg-transparent" name="slug" id="slug" placeholder="Slug Otomatis" maxlength="50" autocomplete="off" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="judul" class="col-sm-2 col-form-label">Judul</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="judul" id="judul" placeholder="Isikan judul" maxlength="155" autocomplete="off" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
                                     <label for="deskripsi" class="col-sm-2 col-form-label">Deskripsi</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="deskripsi" id="deskripsi" placeholder="Isikan deskripsi" maxlength="35" autocomplete="off" required>
+                                        <textarea name="deskripsi" id="summernote" cols="30" rows="5" class="form-control" autocomplete="off" placeholder="Deskripsi" required></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -58,3 +70,27 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function() {
+        $('#judul').on('input', function() {
+            // Mendapatkan judul yang diinputkan
+            var judul = $(this).val().toLowerCase();
+
+            // Mengganti spasi dengan tanda penghubung "-"
+            judul = judul.replace(/\s+/g, '-');
+
+            // Memastikan hanya karakter yang diperbolehkan untuk slug
+            judul = judul.replace(/[^a-z0-9-]/g, '');
+
+            // Memastikan panjang slug tidak melebihi 50 karakter
+            judul = judul.substring(0, 50);
+
+            // Menghapus tanda penghubung "-" terakhir (jika ada)
+            judul = judul.replace(/-+$/, '');
+
+            // Menyisipkan hasil ke dalam input slug
+            $('#slug').val(judul);
+        });
+    });
+</script>

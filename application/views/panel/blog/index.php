@@ -49,6 +49,7 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
+                                        <th>Judul</th>
                                         <th>Deskripsi</th>
                                         <th>Status Artikel</th>
                                         <th>Aksi</th>
@@ -59,19 +60,20 @@
                                     <?php foreach ($result as $res) : ?>
                                         <tr>
                                             <td><?= $no++ ?></td>
-                                            <td><?= $res->deskripsi ?></td>
+                                            <td><?= $res->judul ?></td>
+                                            <td><?= substr(strip_tags(htmlspecialchars_decode($res->deskripsi)), 0, 200) ?>...</td>
                                             <td>
                                                 <?php if ($res->is_active === '1') : ?>
-                                                    <span class="badge badge-success" style="cursor: pointer;" data-toggle="modal" data-target="#modal-status<?= $res->blog_id ?>">Artikel Aktif</span>
+                                                    <span class="badge badge-success" style="cursor: pointer;" data-toggle="modal" data-target="#modal-status<?= $res->artikel_id ?>">Artikel Aktif</span>
                                                 <?php else : ?>
-                                                    <span class="badge badge-danger" style="cursor: pointer;" data-toggle="modal" data-target="#modal-status<?= $res->blog_id ?>">Artikel Dinonaktifkan</span>
+                                                    <span class="badge badge-danger" style="cursor: pointer;" data-toggle="modal" data-target="#modal-status<?= $res->artikel_id ?>">Artikel Dinonaktifkan</span>
                                                 <?php endif; ?>
                                             </td>
                                             <td>
-                                                <button type="button" class="btn btn-info btn-sm" onclick="editData('<?= base_url('blog') ?>', '<?= $res->blog_id ?>')">
+                                                <button type="button" class="btn btn-info btn-sm" onclick="editData('<?= base_url('blog') ?>', '<?= $res->artikel_id ?>')">
                                                     <i class="fas fa-edit"></i> Ubah
                                                 </button>
-                                                <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete('<?= base_url('blog') ?>', '<?= $res->blog_id ?>')">
+                                                <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete('<?= base_url('blog') ?>', '<?= $res->artikel_id ?>')">
                                                     <i class="fas fa-trash-alt"></i> Hapus
                                                 </button>
                                             </td>
@@ -88,7 +90,7 @@
 </div>
 
 <?php foreach ($result as $res) : ?>
-    <div class="modal fade" id="modal-status<?= $res->blog_id ?>">
+    <div class="modal fade" id="modal-status<?= $res->artikel_id ?>">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -97,7 +99,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="<?= base_url() ?>blog/is_active/<?= $res->blog_id ?>" method="post">
+                <form action="<?= base_url() ?>blog/is_active/<?= $res->artikel_id ?>" method="post">
                     <div class="modal-body">
                         <select name="is_active" id="is_active" class="form-control" required>
                             <option value="">--- Choose One ---</option>

@@ -28,6 +28,8 @@ class BlogController extends CI_Controller
 
     public function create()
     {
+        $this->form_validation->set_rules('slug', 'Slug', 'required');
+        $this->form_validation->set_rules('judul', 'Judul', 'required');
         $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required');
 
         if ($this->form_validation->run() == false) {
@@ -70,6 +72,8 @@ class BlogController extends CI_Controller
 
     public function edit($id)
     {
+        $this->form_validation->set_rules('slug', 'Slug', 'required');
+        $this->form_validation->set_rules('judul', 'Judul', 'required');
         $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required');
 
         if ($this->form_validation->run() == false) {

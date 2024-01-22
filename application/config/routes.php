@@ -54,7 +54,10 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['artikel'] = 'HomeController/artikel';
-$route['artikel-details'] = 'HomeController/artikel_details';
+$route['updateCountView'] = 'HomeController/updateCountView';
+$route['artikel/(:any)'] = 'HomeController/artikel/$1';
+$route['artikel-details/(:any)'] = 'HomeController/artikel_details/$1';
+$route['search'] = 'HomeController/search';
 
 $route['panel'] = 'DashboardController';
 

@@ -21,6 +21,8 @@
 <script src="<?= base_url() ?>assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <!-- bs-custom-file-input -->
 <script src="<?= base_url() ?>assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<!-- Summernote -->
+<script src="<?= base_url() ?>assets/plugins/summernote/summernote-bs4.min.js"></script>
 <!-- Page specific script -->
 <script>
     $(function() {
@@ -44,6 +46,13 @@
     $(function() {
         bsCustomFileInput.init();
     });
+
+    $(function() {
+        $('#summernote').summernote({
+            placeholder: 'Write here...',
+            height: 200
+        })
+    })
 </script>
 </body>
 

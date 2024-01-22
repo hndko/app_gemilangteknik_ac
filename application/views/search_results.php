@@ -5,56 +5,66 @@
         <div class="container">
 
             <div class="d-flex justify-content-between align-items-center">
-                <h2>Artikel Details</h2>
+                <h2>Artikel</h2>
                 <ol>
                     <li><a href="<?= base_url() ?>">Home</a></li>
-                    <li><a href="<?= base_url('artikel') ?>">Artikel</a></li>
-                    <li>Artikel Details</li>
+                    <li>Artikel</li>
                 </ol>
             </div>
 
         </div>
-    </div>
+    </div><!-- End Breadcrumbs -->
 
+    <!-- ======= Blog Section ======= -->
     <section id="blog" class="blog">
         <div class="container" data-aos="fade-up">
-
             <div class="row g-5">
-
                 <div class="col-lg-8">
+                    <div class="row gy-4 posts-list">
+                        <?php foreach ($search_results as $res) : ?>
+                            <div class="col-lg-6">
+                                <article class="d-flex flex-column">
+                                    <div class="post-img">
+                                        <img src="<?= base_url() ?>assets/img/blog/<?= $res->sampul ?>" alt="" class="img-fluid">
+                                    </div>
 
-                    <article class="blog-details">
+                                    <h2 class="title">
+                                        <a href="<?= base_url('artikel-details/' . $res->slug) ?>" class="updateCountView" data-article-id="<?= $res->artikel_id ?>"><?= $res->judul ?></a>
+                                    </h2>
 
-                        <div class="post-img">
-                            <img src="<?= base_url() ?>assets/img/blog/<?= $res->sampul ?>" alt="" class="img-fluid">
-                        </div>
+                                    <div class="meta-top">
+                                        <ul>
+                                            <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="#"><?= $res->nama_lengkap ?></a></li>
+                                            <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="#"><time><?= date('F d, Y', strtotime($res->created_at)) ?></time></a></li>
+                                            <li class="d-flex align-items-center"><i class="bi bi-eye"></i> <a href="#"><?= $res->count_view ?></a></li>
+                                        </ul>
+                                    </div>
 
-                        <h2 class="title"><?= $res->judul ?></h2>
+                                    <div class="content mt-2 mb-2">
+                                        <?= substr(strip_tags(htmlspecialchars_decode($res->deskripsi)), 0, 200) ?>...
+                                    </div>
 
-                        <div class="meta-top">
-                            <ul>
-                                <li class="d-flex align-items-center"><i class="bi bi-person"></i> <?= $res->nama_lengkap ?></li>
-                                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <time><?= date('F d, Y', strtotime($res->created_at)) ?></time></li>
-                                <li class="d-flex align-items-center"><i class="bi bi-eye"></i> <?= $res->count_view ?></li>
-                            </ul>
-                        </div>
+                                    <div class="read-more mt-auto align-self-end">
+                                        <a href="<?= base_url('artikel-details/' . $res->slug) ?>" class="updateCountView" data-article-id="<?= $res->artikel_id ?>">Read More</a>
+                                    </div>
 
-                        <div class="content">
-                            <?= htmlspecialchars_decode($res->deskripsi) ?>
-                        </div>
-                    </article>
+                                </article>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <?= $this->pagination->create_links(); ?>
                 </div>
 
                 <div class="col-lg-4">
                     <div class="sidebar">
-
                         <div class="sidebar-item search-form">
                             <h3 class="sidebar-title">Search</h3>
-                            <form action="" class="mt-3">
-                                <input type="text">
+                            <form action="<?= base_url('search') ?>" method="get" class="mt-3">
+                                <input type="text" name="q" placeholder="Search...">
                                 <button type="submit"><i class="bi bi-search"></i></button>
                             </form>
-                        </div><!-- End sidebar search formn-->
+                        </div>
 
                         <div class="sidebar-item recent-posts">
                             <h3 class="sidebar-title">Populer Posts</h3>
@@ -76,6 +86,7 @@
         </div>
     </section>
 </main>
+
 <script>
     $(document).ready(function() {
         $('.updateCountView').on('click', function(e) {

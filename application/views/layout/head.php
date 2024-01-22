@@ -42,6 +42,8 @@
 
     <!-- Template Main CSS File -->
     <link href="<?= base_url() ?>assets/css/style.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="<?= base_url() ?>assets/plugins/jquery/jquery.min.js"></script>
     <style>
         .float {
             position: fixed;
