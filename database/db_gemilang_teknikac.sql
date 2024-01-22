@@ -2,9 +2,9 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 22, 2024 at 11:37 AM
--- Server version: 10.4.27-MariaDB
+-- Host: localhost:3306
+-- Generation Time: Jan 22, 2024 at 01:11 PM
+-- Server version: 8.0.30
 -- PHP Version: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -28,16 +28,16 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `tb_artikel` (
-  `artikel_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL DEFAULT 1,
+  `artikel_id` int NOT NULL,
+  `user_id` int NOT NULL DEFAULT '1',
   `slug` varchar(50) NOT NULL,
   `judul` varchar(155) NOT NULL,
   `deskripsi` text NOT NULL,
   `is_active` enum('1','0') NOT NULL DEFAULT '1',
   `sampul` varchar(155) NOT NULL,
   `count_view` varchar(255) NOT NULL DEFAULT '0',
-  `created_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tb_artikel`
@@ -55,12 +55,12 @@ INSERT INTO `tb_artikel` (`artikel_id`, `user_id`, `slug`, `judul`, `deskripsi`,
 --
 
 CREATE TABLE `tb_dokumentasi` (
-  `dokumentasi_id` int(11) NOT NULL,
+  `dokumentasi_id` int NOT NULL,
   `sampul` varchar(155) NOT NULL,
   `deskripsi` varchar(35) NOT NULL,
   `is_active` enum('0','1') NOT NULL DEFAULT '1',
-  `created_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tb_dokumentasi`
@@ -81,12 +81,12 @@ INSERT INTO `tb_dokumentasi` (`dokumentasi_id`, `sampul`, `deskripsi`, `is_activ
 --
 
 CREATE TABLE `tb_klien` (
-  `klien_id` int(11) NOT NULL,
+  `klien_id` int NOT NULL,
   `sampul` varchar(155) NOT NULL,
   `judul` varchar(35) NOT NULL,
   `is_active` enum('1','0') NOT NULL DEFAULT '1',
-  `created_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tb_klien`
@@ -104,11 +104,11 @@ INSERT INTO `tb_klien` (`klien_id`, `sampul`, `judul`, `is_active`, `created_at`
 --
 
 CREATE TABLE `tb_layanan` (
-  `layanan_id` int(11) NOT NULL,
+  `layanan_id` int NOT NULL,
   `judul` varchar(25) NOT NULL,
   `deskripsi` varchar(100) NOT NULL,
   `is_active` enum('1','0') NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tb_layanan`
@@ -129,7 +129,7 @@ INSERT INTO `tb_layanan` (`layanan_id`, `judul`, `deskripsi`, `is_active`) VALUE
 --
 
 CREATE TABLE `tb_users` (
-  `user_id` int(11) NOT NULL,
+  `user_id` int NOT NULL,
   `nama_lengkap` varchar(155) NOT NULL,
   `email` varchar(155) NOT NULL,
   `username` varchar(50) NOT NULL,
@@ -137,17 +137,16 @@ CREATE TABLE `tb_users` (
   `sampul` varchar(155) NOT NULL,
   `role` varchar(50) NOT NULL,
   `is_active` enum('0','1') NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tb_users`
 --
 
 INSERT INTO `tb_users` (`user_id`, `nama_lengkap`, `email`, `username`, `password`, `sampul`, `role`, `is_active`) VALUES
-(1, 'Administrator', 'administrator@gmail.com', 'admin1234', '$2y$10$U.pshYe2PRbeDS/HIFKHaOkA840N/vh71MHAZ7huevaqF6Ge91OSe', '78b7275375847b74084db99cfb705c17.png', 'Superadmin', '1'),
+(1, 'Administrator', 'administrator@gmail.com', 'gemilangac', '$2a$12$hu/N5lrOxFtsjhWsDmEKKeXFnkXP1gxXbFNj2EnGCN2hTyxTr6R/y', '78b7275375847b74084db99cfb705c17.png', 'Superadmin', '1'),
 (2, 'Karya Gemilang', 'admin01@gmail.com', 'admin01', '$2y$10$i6o8a7bxcuMRmbln0V/fs.H3kf9e0LNjCMQUYAYDG4XpMZaB79ciy', '63e64433e1c79d4c264b9709ebffbf80.jpg', 'Admin Content', '1'),
-(3, 'Admin Gemilang', 'admin.gemilang@gmail.com', 'admin.gemilang', '$2y$10$OYdsY81JXIiyw5q9wrkYxOozqRv04ZbMnV9hl8CSBnhPLKTyEsmkC', 'a6803c2a619c8e49469411fd25c69161.png', 'Admin', '1'),
-(4, 'Hello World', 'helloworld@gmail.com', 'hello.world', '$2y$10$aCi9QqPT2tBfQtnfCyiBjevvcCiJo87rMFRtLgMt7E1ewYSC2VXEm', '0b02ea310c54f7ce68f5b20cadd3a75b.png', 'Admin Content', '0');
+(3, 'Admin Gemilang', 'admin.gemilang@gmail.com', 'admin.gemilang', '$2y$10$OYdsY81JXIiyw5q9wrkYxOozqRv04ZbMnV9hl8CSBnhPLKTyEsmkC', 'a6803c2a619c8e49469411fd25c69161.png', 'Admin', '1');
 
 --
 -- Indexes for dumped tables
@@ -191,31 +190,31 @@ ALTER TABLE `tb_users`
 -- AUTO_INCREMENT for table `tb_artikel`
 --
 ALTER TABLE `tb_artikel`
-  MODIFY `artikel_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `artikel_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tb_dokumentasi`
 --
 ALTER TABLE `tb_dokumentasi`
-  MODIFY `dokumentasi_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `dokumentasi_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tb_klien`
 --
 ALTER TABLE `tb_klien`
-  MODIFY `klien_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `klien_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tb_layanan`
 --
 ALTER TABLE `tb_layanan`
-  MODIFY `layanan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `layanan_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tb_users`
 --
 ALTER TABLE `tb_users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
