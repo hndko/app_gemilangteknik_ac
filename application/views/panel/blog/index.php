@@ -52,6 +52,7 @@
                                         <th>Pengguna</th>
                                         <th>Judul</th>
                                         <th>Deskripsi</th>
+                                        <th>Total Dilihat</th>
                                         <th>Status Artikel</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -64,6 +65,7 @@
                                             <td><?= $res->nama_lengkap ?></td>
                                             <td><?= $res->judul ?></td>
                                             <td><?= substr(strip_tags(htmlspecialchars_decode($res->deskripsi)), 0, 200) ?>...</td>
+                                            <td><?= $res->count_view ?></td>
                                             <td>
                                                 <?php if ($res->is_active === '1') : ?>
                                                     <span class="badge badge-success" style="cursor: pointer;" data-toggle="modal" data-target="#modal-status<?= $res->artikel_id ?>">Artikel Aktif</span>

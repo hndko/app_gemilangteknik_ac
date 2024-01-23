@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
     <!-- summernote -->
     <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/summernote/summernote-bs4.min.css">
+    <!-- TinyMCE -->
+    <script src="https://cdn.tiny.cloud/1/84a2nk8fhbndhv1yoesdvkmcfkuajo2xx97utguyfdb7nqjc/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 </head>
 
 <body class="hold-transition sidebar-mini">

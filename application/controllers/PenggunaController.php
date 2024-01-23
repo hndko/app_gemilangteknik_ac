@@ -113,7 +113,7 @@ class PenggunaController extends CI_Controller
                     // Jika upload berhasil, ambil data file dan simpan ke database
                     $upload_data = $this->upload->data();
                     $file_name = $upload_data['file_name'];
-                    $image_path = $config['upload_path'] . $sampulOld;
+                    $image_path = $config['upload_path'] . $sampul_old;
                     if (file_exists($image_path)) {
                         unlink($image_path);
                     }
@@ -126,7 +126,7 @@ class PenggunaController extends CI_Controller
                 }
             } else {
                 $config['upload_path'] = './assets/img/pengguna/';
-                $file_name = $sampulOld;
+                $file_name = $sampul_old;
 
                 // Simpan data gambar ke dalam database
                 $this->PenggunaModel->ubahData($id, $file_name);

@@ -27,11 +27,11 @@
         <nav id="navbar" class="navbar">
             <ul>
                 <li><a class="nav-link scrollto" href="<?= base_url() ?>">Home</a></li>
-                <li><a class="nav-link scrollto" href="#about">Tentang</a></li>
-                <li><a class="nav-link scrollto" href="#services">Layanan</a></li>
+                <li><a class="nav-link scrollto" href="<?= base_url() ?>#about">Tentang</a></li>
+                <li><a class="nav-link scrollto" href="<?= base_url() ?>#services">Layanan</a></li>
                 <li><a class="nav-link scrollto" href="<?= base_url('artikel') ?>">Artikel</a></li>
-                <li><a class="nav-link scrollto " href="#portfolio">Dokumentasi</a></li>
-                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                <li><a class="nav-link scrollto " href="<?= base_url() ?>#portfolio">Dokumentasi</a></li>
+                <li><a class="nav-link scrollto" href="<?= base_url() ?>#contact">Contact</a></li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->

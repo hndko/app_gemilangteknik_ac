@@ -34,7 +34,6 @@ class BlogController extends CI_Controller
     {
         $this->form_validation->set_rules('slug', 'Slug', 'required');
         $this->form_validation->set_rules('judul', 'Judul', 'required');
-        $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required');
 
         if ($this->form_validation->run() == false) {
             $this->data['title'] = 'Artikel | Gemilang Teknik AC';
@@ -78,7 +77,6 @@ class BlogController extends CI_Controller
     {
         $this->form_validation->set_rules('slug', 'Slug', 'required');
         $this->form_validation->set_rules('judul', 'Judul', 'required');
-        $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required');
 
         if ($this->form_validation->run() == false) {
             $this->data['title'] = 'Artikel | Gemilang Teknik AC';
@@ -111,7 +109,7 @@ class BlogController extends CI_Controller
                     // Jika upload berhasil, ambil data file dan simpan ke database
                     $upload_data = $this->upload->data();
                     $file_name = $upload_data['file_name'];
-                    $image_path = $config['upload_path'] . $sampulOld;
+                    $image_path = $config['upload_path'] . $sampul_old;
                     if (file_exists($image_path)) {
                         unlink($image_path);
                     }
@@ -124,7 +122,7 @@ class BlogController extends CI_Controller
                 }
             } else {
                 $config['upload_path'] = './assets/img/blog/';
-                $file_name = $sampulOld;
+                $file_name = $sampul_old;
 
                 // Simpan data gambar ke dalam database
                 $this->BlogModel->ubahData($id, $file_name);

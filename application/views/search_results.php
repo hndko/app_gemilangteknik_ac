@@ -36,7 +36,7 @@
                                         <ul>
                                             <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="#"><?= $res->nama_lengkap ?></a></li>
                                             <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="#"><time><?= date('F d, Y', strtotime($res->created_at)) ?></time></a></li>
-                                            <li class="d-flex align-items-center"><i class="bi bi-eye"></i> <a href="#"><?= $res->count_view ?></a></li>
+                                            <!-- <li class="d-flex align-items-center"><i class="bi bi-eye"></i> <a href="#"><?= $res->count_view ?></a></li> -->
                                         </ul>
                                     </div>
 

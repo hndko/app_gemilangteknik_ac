@@ -45,7 +45,7 @@
                                 <div class="form-group row">
                                     <label for="deskripsi" class="col-sm-2 col-form-label">Deskripsi</label>
                                     <div class="col-sm-10">
-                                        <textarea name="deskripsi" id="summernote" cols="30" rows="5" class="form-control" autocomplete="off" placeholder="Deskripsi" required>
+                                        <textarea name="deskripsi" id="tinymce" cols="30" rows="5" class="form-control" autocomplete="off" placeholder="Deskripsi">
                                             <?= $res->deskripsi ?>
                                         </textarea>
                                     </div>
