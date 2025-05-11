@@ -4,5 +4,5 @@
         Gemilang Teknik AC
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; <?= date('Y') ?> <a href="https://www.youtube.com/@kodekreatif_id">Kode Kreatif</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; <?= date('Y') ?> <a href="https://g.co/kgs/zs5vRkS">Mari Partner</a>.</strong> All rights reserved.
 </footer>
